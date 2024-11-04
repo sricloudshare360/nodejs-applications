@@ -1,5 +1,6 @@
 const express = require('express');
 const { NmapScan } = require('node-nmap');
+const open = require('open');
 const app = express();
 const port = 3000;
 
@@ -21,4 +22,5 @@ app.get('/scan', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+    open(`http://localhost:${port}`);
 });
