@@ -1,0 +1,16 @@
+{
+  "name": "nmap-express",
+  "version": "1.0.0",
+  "description": "Sure! Let's convert the script into an Express.js application and integrate it with an HTML page. When the HTML page is launched, it will trigger the scan and display the updated report. We'll also add a button to manually trigger the scan.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "node-nmap": "^4.0.0"
+  }
+}

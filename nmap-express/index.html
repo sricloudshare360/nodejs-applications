@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nmap Scan</title>
+    <script>
+        async function fetchScanResults() {
+            const response = await fetch('/scan');
+            const data = await response.json();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            data.forEach(host => {
+                const hostInfo = document.createElement('div');
+                hostInfo.innerHTML = `<strong>IP Address:</strong> ${host.ip} <br> <strong>Hostname:</strong> ${host.hostname || 'N/A'}`;
+                resultsDiv.appendChild(hostInfo);
+            });
+        }
+
+        window.onload = fetchScanResults;
+    </script>
+</head>
+<body>
+    <h1>Nmap Scan Results</h1>
+    <button onclick="fetchScanResults()">Scan Again</button>
+    <div id="results"></div>
+</body>
+</html>
